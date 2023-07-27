@@ -5,10 +5,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
 # get the path to the ChromeDriver executable
-driver_path = ChromeDriverManager().install()
+
 
 # create a new Chrome browser instance
-service = Service(driver_path)
+service = Service(executable_path='/Users/anithamurali/Desktop/python-selenium-automation1/chromedriver')
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
@@ -18,7 +18,7 @@ driver.get('https://www.google.com/')
 # populate search field
 search = driver.find_element(By.NAME, 'q')
 search.clear()
-search.send_keys('Car')
+search.send_keys('chair')
 
 # wait for 4 sec
 sleep(4)
@@ -27,7 +27,7 @@ sleep(4)
 driver.find_element(By.NAME, 'btnK').click()
 
 # verify search results
-assert 'car' in driver.current_url.lower(), f"Expected query not in {driver.current_url.lower()}"
+assert 'chair' in driver.current_url.lower(), f"Expected query not in {driver.current_url.lower()}"
 print('Test Passed')
 
 driver.quit()
