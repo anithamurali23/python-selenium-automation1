@@ -9,12 +9,12 @@ def search_on_bread(context):
     sleep(2)
 
 
-@Then('click on a specified product')
+@then('click on a specified product')
 def click_product(context):
     context.driver.find_element(By.CSS_SELECTOR,'.a-section.aok-relative.s-image-square-aspect').click()
     sleep(2)
 
-@Then('Add to cart')
+@then('Add to cart')
 def cart_add(context):
     context.driver.find_element(By.CSS_SELECTOR,'#add-to-cart-button').click()
     sleep(2)
@@ -24,7 +24,7 @@ def cart_add(context):
 
     sleep(2)
 
-@Then('Verify the added item in the cart')
+@then('Verify the added item in the cart')
 def item_added(context):
     expected_result = 'Subtotal (1 item):'
     actual_result = context.driver.find_element(By.CSS_SELECTOR, '#sc-subtotal-label-buybox').text
