@@ -2,6 +2,6 @@
 Feature: Verify that amazon cart is empty when clicks on the cart icon
 
   Scenario:  amazon cart is empty when user clicks on the cart icon
-    Given  open amazon page
+    Given  Open amazon page
     When clicks on the cart icon
     Then verify the cart is empty

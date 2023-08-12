@@ -7,7 +7,7 @@ def open_amazon(context):
     context.driver.get('https://www.amazon.com/')
 
 @when('click Returns and Orders')
-def search_on_amazon(context):
+def click_reurns(context):
     context.driver.find_element(By.ID,'nav-orders').click()
 
 @then('verify sign in page open')
