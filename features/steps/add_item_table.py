@@ -9,7 +9,7 @@ PRODUCT_NAME = (By.XPATH,'//span[@class="a-color-state a-text-bold"]')
 def added_item(context,items):
     context.driver.find_element(*SEARCH_INPUT_PRODUCT).send_keys(items)
     context.driver.find_element(*SEARCH_BTN).click()
-    sleep(2)
+
 
 @then('verify search result is {expected_text}')
 def verify_item(context,expected_text):

@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 BEST_SELLER_LINK = (By.CSS_SELECTOR,'a[href="/gp/bestsellers/?ref_=nav_cs_bestsellers"]')
-LINK_COUNT = (By.CSS_SELECTOR,"._p13n-zg-nav-tab-all_style_zg-tabs-li-div__1YdPR")
+LINK_COUNT = (By.CSS_SELECTOR,'#zg_header a')
 
 @when('Click on the best sellers')
 def click_best_seller(context):
