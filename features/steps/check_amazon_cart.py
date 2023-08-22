@@ -11,9 +11,10 @@ GO_TO_CART = (By.CSS_SELECTOR, 'a[href="/cart?ref_=sw_gtc"]')
 SUB_TOTAL_BTN = (By.CSS_SELECTOR, '#sc-subtotal-label-buybox')
 @when('search for pencil pouch')
 def search_on_pencil_pouch(context):
-    context.driver.find_element(*INPUT_SEARCH).send_keys('pencil pouch')
-    #context.driver.find_element(*SEARCH_BUTTON).click()
-    context.driver.wait.until(EC.element_to_be_clickable(SEARCH_BUTTON)).click()
+    # context.driver.find_element(*INPUT_SEARCH).send_keys('pencil pouch')
+    # context.driver.find_element(*SEARCH_BUTTON).click()
+    # context.driver.wait.until(EC.element_to_be_clickable(SEARCH_BUTTON)).click()
+      context.app.header.search_product('pencil pouch')
 
 
 @then('click on a specified product')

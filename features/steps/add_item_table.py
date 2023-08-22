@@ -7,8 +7,9 @@ SEARCH_BTN = (By.ID,'nav-search-submit-button')
 PRODUCT_NAME = (By.XPATH,'//span[@class="a-color-state a-text-bold"]')
 @when('searching for {items}')
 def added_item(context,items):
-    context.driver.find_element(*SEARCH_INPUT_PRODUCT).send_keys(items)
-    context.driver.find_element(*SEARCH_BTN).click()
+    # context.driver.find_element(*SEARCH_INPUT_PRODUCT).send_keys(items)
+    # context.driver.find_element(*SEARCH_BTN).click()
+    context.app.header.search_product(items)
 
 
 @then('verify search result is {expected_text}')
