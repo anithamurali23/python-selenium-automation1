@@ -1,30 +1,41 @@
 from behave import given, when, then
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
-RETURNS_ORDERS = (By.ID,'nav-orders')
-SIGN_IN_PAGE = (By.XPATH,"// h1[@class='a-spacing-small']")
-ER_EMAIL_FIELD = (By.XPATH,"// input[@type = 'email']")
-AR_EMAIL_FIELD = (By.CSS_SELECTOR, "#ap_email")
+
+SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
+
+
 @given('Open amazon page')
 def open_amazon(context):
-    # context.driver.get('https://www.amazon.com/')
     context.app.main_page.open_main()
 
 @when('click Returns and Orders')
-def click_reurns(context):
-    # context.driver.find_element(*RETURNS_ORDERS).click()
+def click_returns(context):
     context.app.header.returns_orders()
 
-@then('verify {text} page open')
-def sign_in_page_open(context,text):
+@when('Click on button from SignIn popup')
+def signin_btn_click(context):
+    context.app.header.click_signin_from_popup()
 
-    # expected_result = 'Sign in'
-    # actual_result = context.driver.find_element(*SIGN_IN_PAGE).text
-    # assert expected_result == actual_result, f'Error, expected {expected_result} did not match actual{actual_result}'
-     context.app.header.verify_signin(text)
-@then('email input field is present')
-def email_field_present(context):
-    # expected_result = context.driver.find_element(*ER_EMAIL_FIELD).is_displayed()
-    # actual_result = context.driver.find_element(*AR_EMAIL_FIELD).is_displayed()
-    # assert expected_result == actual_result, f'Error, expected {expected_result} did not match actual {actual_result}'
-    context.app.header.email_input()
+@then('Verify Sign in page opens')
+def go_to_signin_page(context):
+    context.app.sign_in_page.verify_signin_opened()
+
+
+@then('Verify Sign in is clickable')
+def click_signin_page(context):
+    context.app.header.verify_signin_btn_clickable()
+
+@when('Wait for 3 sec')
+def wait_sec(context):
+    sleep(3)
+
+@then('Verify Sign In disappears')
+def signin_disappear(context):
+    context.app.header.verify_signin_btn_disappears()
+
+# @then('email input field is present')
+# def email_field_present(context):
+#     context.app.header.email_input()
