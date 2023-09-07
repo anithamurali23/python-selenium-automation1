@@ -4,10 +4,9 @@
 
 def reverse_integer(n: int):
     string = str(n)
-    if string[0] == "-":
-        return int("-" + string[:0:-1])
-    else:
-        return int(string[::-1])
+    return int("-" + string[:0:-1])
+
+
 
 print(reverse_integer(-154))
 print(reverse_integer(124))

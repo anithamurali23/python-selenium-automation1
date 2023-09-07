@@ -5,6 +5,8 @@ from time import sleep
 SEARCH_INPUT_PRODUCT = (By.ID,'twotabsearchtextbox')
 SEARCH_BTN = (By.ID,'nav-search-submit-button')
 PRODUCT_NAME = (By.XPATH,'//span[@class="a-color-state a-text-bold"]')
+
+
 @when('searching for {items}')
 def added_item(context,items):
     # context.driver.find_element(*SEARCH_INPUT_PRODUCT).send_keys(items)
