@@ -27,3 +27,16 @@ def verifying_can_click_colors(context):
         actual_colors.append(current_color)
 
     assert actual_colors == expected_colors, f'Expected {expected_colors} did not match actual {actual_colors}'
+
+
+@when('Hover over New Arrivals')
+def hover_new_arrivals(context):
+    context.app.header.hover_new_arrivals()
+
+@then('Select one product hoodie')
+def select_hoodie_product(context):
+    context.app.header.select_hoodie_product()
+
+@then('Verify that the user sees the deals')
+def verify_user_see_deals(context):
+    context.app.header.verify_user_see_deals()

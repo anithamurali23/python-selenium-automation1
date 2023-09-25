@@ -105,3 +105,24 @@ plus_one(input_digits)
 print(input_digits)
 
 
+# def selection_sort(arr:list):
+#     for i in range(len(arr)):
+#         min_index = i
+#         for j in range(i+1, len(arr)):
+#             if arr[j] < arr[min_index]:
+#                 min_index = j
+#         arr[i], arr[min_index] = arr[min_index], arr[i]
+#     return arr
+#
+# test_data = [4,2,1,7,5,3]
+# print(test_data)
+# selection_sort(test_data)
+# print(test_data)
+#
+#
+# def bubble_sort(arr: list):
+#     for i in range(len(arr)):
+#         for j in range(len(arr) - 1 -i):
+#             if arr[j] > arr[jc+ 1]:
+#                 arr[j], arr[j + 1] = arr[j+1], arr[j]
+#     return arr

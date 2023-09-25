@@ -1,5 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
+# from support.logger import logger
 
 
 class Page:
@@ -7,6 +9,13 @@ class Page:
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
+
+    def open_url(self, end_url=''):
+        url = f'https://www.amazon.com/{end_url}'
+        self.driver.get(url)
+        logger.info(f'Opening URL {url}')
+        sleep(2)
+        self.driver.refresh()
 
     def click(self, *locator):
         self.driver.find_element(*locator).click()
@@ -62,6 +71,12 @@ class Page:
             message=f'Element not clickable: {locator}'
         )
         e.click()
+
+    def wait_for_element_appear(self, *locator):
+        self.wait.until(
+            EC.visibility_of_element_located(locator),
+            message=f'Element did not appear: {locator}'
+        )
 
     def wait_for_element_disappear(self, *locator):
         self.wait.until(
