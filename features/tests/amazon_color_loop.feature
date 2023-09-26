@@ -5,7 +5,7 @@ Feature: verify the color selection of a product using loop and check each color
 #  Scenario: verify a product color by clicking
 #    Given Open Amazon product B07BJKRR25 page
 #    Then verify the user can click through colors
-
+  @smoke
   Scenario Outline: Select a product from Closing category and hover over New Arrivals
     Given Open Amazon page
     When  searching for <product>
@@ -14,4 +14,4 @@ Feature: verify the color selection of a product using loop and check each color
     Then Verify that the user sees the deals
     Examples:
       | product             |
-      | girls pants |
+      | hoodie for girls |

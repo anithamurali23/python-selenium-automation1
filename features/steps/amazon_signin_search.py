@@ -22,7 +22,7 @@ def signin_btn_click(context):
 
 @then('Verify Sign in page opens')
 def go_to_signin_page(context):
-    context.app.sign_in_page.verify_signin_opened()
+    context.app.signin_page.verify_signin_opened()
 
 
 @then('Verify Sign in is clickable')

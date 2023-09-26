@@ -1,7 +1,7 @@
 
 Feature:user check if the product added in the cart
 
-
+  @smoke
   Scenario:check the number of product added in the cart
     Given Open amazon page
     When search for pencil pouch

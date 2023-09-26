@@ -1,6 +1,7 @@
 # Created by anithamurali at 9/10/23
 Feature: Tests for 404 error page
 
+
   Scenario:User is able to navigate to amazon blog from 404 page
       Given Open Amazon product B07NF5WGQ11111111 page
       And Store original window

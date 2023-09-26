@@ -15,6 +15,7 @@ class Header(Page):
     DEPT_SELECTION = (By.ID, 'searchDropdownBox')
     SUB_HEADER_DEPT = (By.CSS_SELECTOR, '#searchDropdownDescription option[value="search-alias={SUB_STR}"]')
     NEW_ARRIVALS = (By.CSS_SELECTOR, 'a[href="/New-Arrivals/b/?_encoding=UTF8&node=17020138011&ref_=sv_sl_6"]')
+    SELECT_PRODUCT_HOODIE = (By.CSS_SELECTOR, '.s-image-padding')
     WOMENS_NEW_ARRIVALS = (By.CSS_SELECTOR, '.mm-merch-panel img[src*="https://m.media-amazon.com/images/G/01//AMAZON_FASHION/2022/"]')
     ALL_DROPDOWN = (By.ID, 'searchDropdownBox')
     GOTO_CART_ICON = (By.CSS_SELECTOR, 'a[href="/gp/cart/view.html?ref_=nav_cart"]')
@@ -45,6 +46,9 @@ class Header(Page):
         dept_selection = self.find_element(*self.DEPT_SELECTION)
         select = Select(dept_selection)
         select.select_by_value(f'search-alias={dept}')
+
+    def select_hoodie_product(self):
+        self.click(*self.SELECT_PRODUCT_HOODIE)
 
 
     def click_the_product(self):
